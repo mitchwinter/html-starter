@@ -1,0 +1,19 @@
+* {
+  @include box-sizing(border-box);
+}
+
+
+/* Layout Examples using SASS */
+body {
+	background-color: $bg;
+}
+
+.page-wrap {
+	width: 70%;
+	margin: 0 auto;
+	@extend %clearfix;
+	position: relative;
+	@include bp(baby) {
+		width: 96%;
+	}
+}

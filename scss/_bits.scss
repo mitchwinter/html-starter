@@ -1,0 +1,31 @@
+/* This is how you set a reusable colour! */
+$bg: #fff;
+
+/* Basic Clear fix */
+%clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+/* CSS-Tricks recommended breakpoints - move away from device labels */
+@mixin bp($point) {
+  @if $point == 'baby' {
+    @media (max-width: 600px) { @content; }
+  }
+  @if $point == 'mama' {
+    @media (min-width: 601px) and (max-width: 1100px) { @content; }
+  }
+  @if $point == 'papa' {
+    @media (min-width: 1101px) { @content; }
+  }
+  @if $point == 'retina' {
+    @media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+      @content
+    }
+  }
+}
